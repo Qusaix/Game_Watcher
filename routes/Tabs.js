@@ -2,7 +2,8 @@ import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Main from "../components/Main.js";
-import AAAGames from '../components/AAAGames.js'
+import AAAGames from '../components/AAAGames.js';
+import UnCrackedGames from "../components/UnCrackedGames.js"
 import { FontAwesome , FontAwesome5 , Entypo} from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator();
@@ -26,9 +27,9 @@ export default function MyTabs() {
           {
               iconName = focused ? 'list-ul' : 'list';
           }
-          else if (route.name =="Settings")
+          else if (route.name =="Uncracked Games")
           {
-            iconName = focused ? 'gear' : 'cog';
+            iconName = focused ? 'calendar' : 'calendar';
           }
 
           
@@ -42,6 +43,7 @@ export default function MyTabs() {
     >
       <Tab.Screen name="Lates Games" component={Main} />
       <Tab.Screen name="AAA Games" component={AAAGames} />
+      {/* <Tab.Screen name="Uncracked Games" component={UnCrackedGames} /> */}
     </Tab.Navigator>
     </NavigationContainer>
 
