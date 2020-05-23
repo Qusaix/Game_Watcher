@@ -5,7 +5,7 @@ import Moment from 'moment';
 
 
 
-class Main extends React.Component
+class AAAGames extends React.Component
 {
     constructor()
     {
@@ -19,7 +19,7 @@ class Main extends React.Component
 
     componentDidMount = ()=>
     {
-        fetch('https://api.crackwatch.com/api/games?page=0&sort_by=crack_date&is_cracked=true',{
+        fetch('https://api.crackwatch.com/api/games?page=0&sort_by=crack_date&is_cracked=true&is_aaa=true',{
             method:"GET"
         })
         .then(res=>res.json())
@@ -83,7 +83,7 @@ class Main extends React.Component
                   color:"gray",
               }}
               >
-                Latest Cracked Games
+                Latest Cracked AAA Games
              </Text>  
             <FlatList
                 data={this.state.games}
@@ -125,7 +125,7 @@ class Main extends React.Component
 }
 
 
-export default Main;
+export default AAAGames;
 
 const styles = StyleSheet.create({
     container: {
